@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+backend/.venv/
+backend/venv/
+backend/**/__pycache__/
+*.py[cod]
+nextjs/node_modules/
+nextjs/.next/
+nextjs/.env*
+.pytest_cache/

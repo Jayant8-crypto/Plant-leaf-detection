@@ -1,0 +1,150 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Cotton Disease Analyzer Project Architecture</title>
+  <desc id="desc">Architecture diagram showing Next.js frontend, FastAPI backend, CNN model, and image analysis workflow.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4fbf5"/>
+      <stop offset="100%" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="frontendGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#e8f7ec"/>
+      <stop offset="100%" stop-color="#dff3e6"/>
+    </linearGradient>
+    <linearGradient id="backendGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#edf4ff"/>
+      <stop offset="100%" stop-color="#e0ebff"/>
+    </linearGradient>
+    <linearGradient id="mlGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#fff4df"/>
+      <stop offset="100%" stop-color="#ffe9bf"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#3b82f6"/>
+    </marker>
+    <style>
+      .title { font: 700 30px 'Segoe UI', sans-serif; fill: #0f172a; }
+      .subtitle { font: 600 18px 'Segoe UI', sans-serif; fill: #334155; }
+      .boxTitle { font: 700 24px 'Segoe UI', sans-serif; fill: #0f172a; }
+      .label { font: 600 18px 'Segoe UI', sans-serif; fill: #0f172a; }
+      .small { font: 500 15px 'Segoe UI', sans-serif; fill: #475569; }
+      .tag { font: 700 13px 'Segoe UI', sans-serif; fill: #0f172a; letter-spacing: 1px; }
+      .arrowText { font: 600 16px 'Segoe UI', sans-serif; fill: #1d4ed8; }
+      .card { fill: white; stroke: rgba(15,23,42,0.08); stroke-width: 1.5; }
+      .panel { fill: #ffffff; stroke: rgba(15,23,42,0.08); stroke-width: 1.5; }
+      .front { fill: url(#frontendGrad); stroke: #86efac; stroke-width: 2; }
+      .back { fill: url(#backendGrad); stroke: #93c5fd; stroke-width: 2; }
+      .ml { fill: url(#mlGrad); stroke: #f7c873; stroke-width: 2; }
+      .data { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; }
+      .line { stroke: #3b82f6; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .thin { stroke: #64748b; stroke-width: 2.5; fill: none; stroke-dasharray: 10 10; }
+      .badge { fill: #dcfce7; stroke: #86efac; stroke-width: 1; }
+      .badgeBlue { fill: #dbeafe; stroke: #93c5fd; stroke-width: 1; }
+      .badgeGold { fill: #fef3c7; stroke: #f7c873; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="980" fill="url(#bg)"/>
+
+  <text x="800" y="70" text-anchor="middle" class="title">Cotton Disease Analyzer Architecture</text>
+  <text x="800" y="105" text-anchor="middle" class="subtitle">Full-stack project overview</text>
+
+  <!-- User Layer -->
+  <rect x="60" y="160" width="260" height="670" rx="28" class="panel front" filter="url(#shadow)"/>
+  <text x="190" y="205" text-anchor="middle" class="boxTitle">User / Browser</text>
+  <rect x="90" y="240" width="200" height="120" rx="18" class="card"/>
+  <rect x="104" y="255" width="170" height="26" rx="13" class="badge"/>
+  <text x="189" y="273" text-anchor="middle" class="tag">PUBLIC PAGES</text>
+  <text x="189" y="305" text-anchor="middle" class="label">Landing page</text>
+  <text x="189" y="330" text-anchor="middle" class="label">Home / About / FAQ</text>
+
+  <rect x="90" y="390" width="200" height="135" rx="18" class="card"/>
+  <rect x="104" y="405" width="170" height="26" rx="13" class="badgeBlue"/>
+  <text x="189" y="423" text-anchor="middle" class="tag">DASHBOARD</text>
+  <text x="189" y="455" text-anchor="middle" class="label">Upload cotton leaf</text>
+  <text x="189" y="480" text-anchor="middle" class="label">Preview image</text>
+  <text x="189" y="505" text-anchor="middle" class="label">See analysis result</text>
+
+  <rect x="90" y="555" width="200" height="120" rx="18" class="card"/>
+  <rect x="104" y="570" width="170" height="26" rx="13" class="badgeGold"/>
+  <text x="189" y="588" text-anchor="middle" class="tag">AUTH</text>
+  <text x="189" y="620" text-anchor="middle" class="label">Login</text>
+  <text x="189" y="645" text-anchor="middle" class="label">Signup</text>
+
+  <!-- Frontend platform -->
+  <rect x="420" y="160" width="430" height="670" rx="28" class="panel front" filter="url(#shadow)"/>
+  <text x="635" y="205" text-anchor="middle" class="boxTitle">Next.js Frontend</text>
+
+  <rect x="465" y="245" width="340" height="125" rx="20" class="card"/>
+  <text x="635" y="280" text-anchor="middle" class="label">App Router + UI Components</text>
+  <text x="635" y="312" text-anchor="middle" class="small">layout.js • page.jsx • navbar • footer • banner</text>
+  <text x="635" y="338" text-anchor="middle" class="small">sections + reusable components</text>
+
+  <rect x="465" y="395" width="340" height="145" rx="20" class="card"/>
+  <text x="635" y="430" text-anchor="middle" class="label">Dashboard Upload Flow</text>
+  <text x="635" y="462" text-anchor="middle" class="small">Image validation</text>
+  <text x="635" y="488" text-anchor="middle" class="small">Preview, file type check, size validation</text>
+  <text x="635" y="514" text-anchor="middle" class="small">Submit to backend API</text>
+
+  <rect x="465" y="575" width="340" height="175" rx="20" class="card"/>
+  <text x="635" y="610" text-anchor="middle" class="label">Client Experience Layer</text>
+  <text x="635" y="642" text-anchor="middle" class="small">Responsive layouts</text>
+  <text x="635" y="668" text-anchor="middle" class="small">Modern landing page design</text>
+  <text x="635" y="694" text-anchor="middle" class="small">Light theme branding</text>
+  <text x="635" y="720" text-anchor="middle" class="small">Animations + scroll effects</text>
+
+  <!-- Backend -->
+  <rect x="960" y="160" width="560" height="670" rx="28" class="panel back" filter="url(#shadow)"/>
+  <text x="1240" y="205" text-anchor="middle" class="boxTitle">FastAPI Backend</text>
+
+  <rect x="1000" y="245" width="480" height="180" rx="22" class="card"/>
+  <rect x="1018" y="265" width="180" height="28" rx="14" class="badgeBlue"/>
+  <text x="1108" y="284" text-anchor="middle" class="tag">API</text>
+  <text x="1240" y="313" text-anchor="middle" class="label">POST /api/analyze</text>
+  <text x="1240" y="347" text-anchor="middle" class="small">Accepts uploaded leaf image</text>
+  <text x="1240" y="373" text-anchor="middle" class="small">Validates JPG/JPEG/PNG and max file size</text>
+  <text x="1240" y="399" text-anchor="middle" class="small">Returns prediction + confidence + message</text>
+
+  <rect x="1000" y="470" width="230" height="220" rx="20" class="card"/>
+  <rect x="1018" y="490" width="190" height="28" rx="14" class="badgeGold"/>
+  <text x="1113" y="509" text-anchor="middle" class="tag">MODEL SERVICE</text>
+  <text x="1115" y="548" text-anchor="middle" class="label">Image Preprocessing</text>
+  <text x="1115" y="577" text-anchor="middle" class="small">Resize to 128x128</text>
+  <text x="1115" y="604" text-anchor="middle" class="small">Convert RGB</text>
+  <text x="1115" y="631" text-anchor="middle" class="small">Normalize input</text>
+  <text x="1115" y="658" text-anchor="middle" class="small">Call CNN model</text>
+
+  <rect x="1250" y="470" width="230" height="220" rx="20" class="card"/>
+  <rect x="1268" y="490" width="190" height="28" rx="14" class="badge"/>
+  <text x="1363" y="509" text-anchor="middle" class="tag">MODEL FILES</text>
+  <text x="1363" y="548" text-anchor="middle" class="label">cotton_disease_cnn.keras</text>
+  <text x="1363" y="577" text-anchor="middle" class="small">Trained CNN classifier</text>
+  <text x="1363" y="604" text-anchor="middle" class="small">class_names.json</text>
+  <text x="1363" y="631" text-anchor="middle" class="small">Disease labels</text>
+  <text x="1363" y="658" text-anchor="middle" class="small">Prediction output</text>
+
+  <!-- Data flow arrows -->
+  <path d="M 320 300 C 370 300, 390 300, 420 300" class="line"/>
+  <text x="360" y="282" class="arrowText">Request</text>
+
+  <path d="M 850 430 C 900 430, 930 430, 960 430" class="line"/>
+  <text x="900" y="410" class="arrowText">Upload image</text>
+
+  <path d="M 1240 425 C 1240 440, 1240 450, 1240 470" class="line"/>
+  <text x="1260" y="455" class="arrowText">Use model</text>
+
+  <path d="M 1000 580 C 930 580, 890 580, 850 580" class="line"/>
+  <text x="900" y="555" class="arrowText">Prediction result</text>
+
+  <path d="M 635 835 L 635 905" class="thin"/>
+  <path d="M 1240 830 L 1240 905" class="thin"/>
+  <text x="635" y="930" text-anchor="middle" class="small">Next.js client rendering + UI state</text>
+  <text x="1240" y="930" text-anchor="middle" class="small">FastAPI + TensorFlow ML pipeline</text>
+
+  <!-- Footer label -->
+  <rect x="660" y="118" width="280" height="36" rx="18" class="badgeBlue"/>
+  <text x="800" y="141" text-anchor="middle" class="tag">WEB + AI APPLICATION</text>
+</svg>
